@@ -161,6 +161,8 @@ def putinfo(userid):
 #初始化数据库
 @main.route('/initcollege',methods=['GET'])
 def initcollege():
+	db.drop_all()
+	db.create_all()
 	Crank1=CollegeRank(collegename='数学与统计学院',all_persons=0,all_distance=0,week_distance=0,day_distance=0)
 	Crank2=CollegeRank(collegename='经济与贸易学院',all_persons=0,all_distance=0,week_distance=0,day_distance=0)
 	Crank3=CollegeRank(collegename='计算机科学与工程学院',all_persons=0,all_distance=0,week_distance=0,day_distance=0)
