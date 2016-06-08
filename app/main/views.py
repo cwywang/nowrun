@@ -138,13 +138,19 @@ def putrecord(userid):
 #上传用户信息
 @main.route('/postInfo/<userid>',methods=['POST'])
 def putinfo(userid):
-	jsoninfo=eval(request.get_data().decode('utf-8'))
-	username=jsoninfo['username']
-	college=jsoninfo['college']
-	height=jsoninfo['height']
-	weight=jsoninfo['weight']
-	sex=jsoninfo['sex']
-	motto=jsoninfo['motto']
+	#jsoninfo=eval(request.get_data().decode('utf-8'))
+	#username=jsoninfo['username']
+	#college=jsoninfo['college']
+	#height=jsoninfo['height']
+	#weight=jsoninfo['weight']
+	#sex=jsoninfo['sex']
+	#motto=jsoninfo['motto']
+	username=request.form['username']
+	college=request.form['college']
+	height=request.form['height']
+	weight=request.form['weight']
+	sex=request.form['sex']
+	motto=request.form['motto']
 	admin_user=UserInfo(userid=userid,
 						username=username,
 						college=college,
